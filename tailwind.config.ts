@@ -9,8 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        myBg:"#131315",
+        myBg2:"#18181b",
+        myBorder:"#2c2c30",
+        myBtnBg:"#db1a5a",
+        myBtnBg2:"#424248",
+        myBtnTst:"#c3c3c6",
+      },
+      boxShadow: {
+        'inset-custom': 'inset 5px 7px 15px rgb(5, 5, 5)',
       },
     },
   },
