@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { COLLECTION_ID_MESSAGE, DATABASE_ID, databases } from './writeappConfig'
 import { useAuth } from '@/Context/AuthContext'
 
-const Msg = ({ id, body, time }: msgProps) => {
+const Msg = ({ id, body, time, sender }: msgProps) => {
   const { data, setData} = useAuth();
   const [isDeleting, setIsDeleting] = useState(false);
 
@@ -23,7 +23,7 @@ const Msg = ({ id, body, time }: msgProps) => {
   };
 
   return (
-    <div className={`flex flex-col relative p-4 rounded-md bg-myBtnBg h-auto w-[350px] ${isDeleting ? 'opacity-50' : ''}`}>
+    <div className={`flex flex-col relative p-4 rounded-md ${(sender)? `bg-myBtnBg`: `bg-[#7b1135] self-end `} h-auto w-[350px] ${isDeleting ? 'opacity-50' : ''}`}>
       <div className="flex justify-end items-center gap-5">
         <span className='text-sm text-myBtnTst font-bold'>{time}</span>
         <Image
